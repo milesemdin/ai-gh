@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class OpenDoor : MonoBehaviour
 {
@@ -8,27 +9,23 @@ public class OpenDoor : MonoBehaviour
     private Vector3 _closedPosition;
     private Vector3 _openPosition;
     public float speed = 5f;
-    public float waitTime = 3f;
+    
     // Vector3 makes position and the closed position means the variable of what its called
 
     // Start is called before the first frame update
     void Start()
     {
         _closedPosition = transform.position;
-        _openPosition = transform.position + deltaPosition;
+        _openPosition = (-8,3,23);
     }
-    void openDoor()
-    {
-        if (Input.GetKeyDown("e"));
-        {
-            Vector3.MoveTowards(transform.position, _openPosition, speed * Time.deltaTime);
-        }
-    }
+
 
     // Update is called once per frame
-    void Update()
+    void Update ()
     {
-        openDoor();
-
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Vector3.MoveTowards(transform.position, _openPosition, speed);
+        }
     }
 }
