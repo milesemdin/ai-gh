@@ -16,7 +16,6 @@ public class OpenDoor : MonoBehaviour
     void Start()
     {
         _closedPosition = transform.position;
-        _openPosition = (-8,3,23);
     }
 
 

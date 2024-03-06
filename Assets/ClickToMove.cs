@@ -6,11 +6,11 @@ using UnityEngine.AI;
 [RequireComponent (typeof(NavMeshAgent))]
 public class ClickToMove : MonoBehaviour
 {
-    private NavMeshAgent agent;
+    private NavMeshAgent humaniod;
     // Start is called before the first frame update
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
+        humaniod = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class ClickToMove : MonoBehaviour
 
             if(Physics.Raycast(ray.origin, ray.direction, out hitInfo))
             {
-                agent.destination = hitInfo.point;
+                humaniod.destination = hitInfo.point;
             }
 
             
