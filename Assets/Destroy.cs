@@ -11,7 +11,7 @@ public class Destroy : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Humaniod"))
-       {
+        {
              Destroy(collision.gameObject);
         }
     }
