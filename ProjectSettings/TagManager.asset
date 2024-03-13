@@ -9,6 +9,7 @@ TagManager:
   - Humaniod
   - Coin
   - Powerup
+  - Door
   layers:
   - Default
   - TransparentFX
