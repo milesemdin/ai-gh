@@ -1,29 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Door : MonoBehaviour
 {
-    public Vector3 open;
-    public Vector3 close;
+    private Vector3 open;
+    private Vector3 close;
+    public bool closed = true;
     public float moveSpeed = 5f;
     private void Start()
     {
-        close = transform.position;
+        GetComponent<BoxCollider>();
+        closed = true;
     }
-    private void OnTriggerEnter(Collider other)
+    void Opened()
     {
-        if (other.transform.tag == ("Humaniod"))
+        closed = false;
+        Debug.Log("wow");
+    }
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "Humaniod")
         {
-            Open();
-        }
-        else
-        {
+            Opened();
             
         }
-    }
-    void Open()
-    {
-        Vector3.MoveTowards(transform.position, open, moveSpeed);
     }
 }
